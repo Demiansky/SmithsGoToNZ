@@ -1,0 +1,129 @@
+/* Reset and global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Header Section */
+.header {
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  height: 500px;     /* Set a fixed height for the blue box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent content from overflowing */
+  border: 2px solid #4e81c5; /* Light blue border */
+  background-color: rgb(212, 221, 238);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #003366; /* Dark blue */
+  margin: 0;
+}
+
+.banner {
+  border-radius: 10px;
+  width: 100%; /* Allow the width to adjust automatically */
+  height: 100%; /* Make the height fill the blue box */
+  max-width: 1200px; /* Limit the maximum width */
+  object-fit: cover; /* Ensure the entire image is visible without cropping */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Treat the image as a block element */
+}
+
+/* Image Grid Section */
+.image-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.image-card {
+  flex: 1;
+  border-radius: 10px;
+  border: 2px solid #4e81c5; /* Light blue border */
+  background-color: rgb(212, 221, 238);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  position: relative; /* Make the card a positioning context */
+  overflow: hidden; /* Ensure content stays within the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.image-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: filter 0.3s ease; /* Smooth darkening effect */
+}
+
+.image-card:hover img {
+  filter: brightness(70%); /* Darken the image */
+}
+
+.image-card p {
+  position: absolute; /* Position the text absolutely */
+  top: 10px; /* Place it near the top */
+  left: 50%; /* Center horizontally */
+  width: 75%; /* Set the width to 75% of the card */
+  transform: translateX(-50%) scale(1); /* Default scale */
+  background-color: rgba(175, 183, 230, 0.4); /* Add a semi-transparent background */
+  padding: 0.5rem 1rem; /* Add some padding around the text */
+  border-radius: 5px; /* Round the edges of the text box */
+  font-size: 3rem; /* Adjust font size */
+  font-weight: bold; /* Make the text bold */
+  color: #0c0404; /* Match the dark blue color */
+  text-align: center; /* Center-align the text */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.image-card:hover p {
+  transform: translateX(-50%) scale(1.1); /* Slightly enlarge the text */
+  background-color: rgba(175, 183, 230, 0.6); /* Make the background slightly less transparent */
+}
+
+.plane-sprite {
+  position: absolute;
+  top: 20%; /* Start in the middle of the banner */
+  left: -100px; /* Start off-screen to the left */
+  width: 50px; /* Adjust the size of the plane */
+  height: 50px;
+  background-image: url('./assets/planesprite.png'); /* Use your plane image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateY(-50%); /* Center vertically */
+  animation: fly-across 5s linear infinite; /* Animate the plane */
+
+}
+
+@keyframes fly-across {
+  0% {
+    left: -100px; /* Start off-screen to the left */
+  }
+  100% {
+    left: 100%; /* End off-screen to the right */
+  }
+}
