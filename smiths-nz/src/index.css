@@ -100,6 +100,11 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
 }
 
+.image-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .image-card:hover p {
   transform: translateX(-50%) scale(1.1); /* Slightly enlarge the text */
   background-color: rgba(175, 183, 230, 0.6); /* Make the background slightly less transparent */
