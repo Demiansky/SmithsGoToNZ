@@ -9,15 +9,16 @@ import plane from './assets/plane.png';
 import family from './assets/family.png';
 import robot from './assets/robot.png';
 import checklist from './assets/checklist.png';
-import planesprite from './assets/planesprite.png';
+import planeFlyingGif from './assets/plane-flying.gif';
 
 function App() {
   return (
     <div className="page">
       {/* Header Section */}
+      
       <header className="header">
         <img src={plane} alt="Plane flying to New Zealand" className="banner" />
-        <div className="plane-sprite"></div>
+        <img src={planeFlyingGif} alt="Flying plane" className="plane-flying-gif" />
       </header>
 
       {/* Image Grid Section */}

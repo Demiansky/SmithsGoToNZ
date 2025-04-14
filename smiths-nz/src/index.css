@@ -22,7 +22,7 @@ body {
   padding: 1rem;
   border-radius: 10px;
   position: relative;
-  height: 500px;     /* Set a fixed height for the blue box */
+  height: 300px;     /* Set a fixed height for the blue box */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,21 +107,29 @@ body {
 
 .plane-sprite {
   position: absolute;
-  top: 20%; /* Start in the middle of the banner */
+  top: 60%; /* Start in the middle of the banner */
   left: -100px; /* Start off-screen to the left */
-  width: 50px; /* Adjust the size of the plane */
-  height: 50px;
-  background-image: url('./assets/planesprite.png'); /* Use your plane image */
-  background-size: contain;
+  width: 200px; /* Width of a single frame */
+  height: 200px; /* Height of a single frame */
+  background-image: url('./assets/planesprite-sheet.png'); /* Sprite sheet image */
+  background-size: 400%; /* Adjust based on the number of frames */
   background-repeat: no-repeat;
   transform: translateY(-50%); /* Center vertically */
-  animation: fly-across 5s linear infinite; /* Animate the plane */
+  animation: fly-across 5s linear infinite, sprite-animation 1s steps(4) infinite; /* Combine animations */
+}
 
+.plane-flying-gif {
+  position: absolute;
+  top: 60%; /* Adjust the vertical position */
+  left: -100px; /* Start off-screen to the left */
+  width: 400px; /* Adjust the size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  animation: fly-across 10s linear infinite; /* Animate the plane */
 }
 
 @keyframes fly-across {
   0% {
-    left: -100px; /* Start off-screen to the left */
+    left: -1000px; /* Start off-screen to the left */
   }
   100% {
     left: 100%; /* End off-screen to the right */
