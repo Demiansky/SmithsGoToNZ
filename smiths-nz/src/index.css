@@ -17,7 +17,7 @@ body {
   padding: 1rem;
 }
 
-/* Header Section */
+/* Header Section for The Smiths Move to New Zealand*/
 .header {
   padding: 1rem;
   border-radius: 10px;
@@ -47,6 +47,13 @@ body {
   object-fit: cover; /* Ensure the entire image is visible without cropping */
   margin: 0 auto; /* Center the image horizontally */
   display: block; /* Treat the image as a block element */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover effect */
+}
+
+.banner:hover {
+  transform: scale(1.05); /* Slightly enlarge the banner */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
+  filter: brightness(70%); /* Darken the banner */
 }
 
 /* Image Grid Section */

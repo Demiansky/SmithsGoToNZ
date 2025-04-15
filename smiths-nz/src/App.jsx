@@ -23,7 +23,9 @@ function App() {
       <div className="page">
         {/* Header Section */}
         <header className="header">
-          <img src={plane} alt="Plane flying to New Zealand" className="banner" />
+          <Link to="/">
+            <img src={plane} alt="Plane flying to New Zealand" className="banner" />
+          </Link>
           <img src={planeFlyingGif} alt="Flying plane" className="plane-flying-gif" />
         </header>
 
