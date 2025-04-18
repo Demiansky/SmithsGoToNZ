@@ -1,7 +1,8 @@
+const API_KEY = import.meta.env.VITE_API_KEY;
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function fetchClaudeResponse(conversationHistory, system) {
     try {
-      console.log('Conversation History Sent to API:', conversationHistory); // Log the conversation history
-  
       const response = await fetch('http://localhost:5000/api/claude', {
         method: 'POST',
         headers: {
@@ -20,7 +21,7 @@ export async function fetchClaudeResponse(conversationHistory, system) {
         console.error('Proxy API Error:', errorText);
         throw new Error('Failed to fetch response from proxy server');
       }
-  
+      
       const data = await response.json();
       console.log('Claude API Response:', data); // Log the full response
       return data.content[0].text.trim(); // Adjust based on the API response structure
