@@ -4,10 +4,16 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f8ff; /* Light blue background */
+  background-image: url('./assets/background.png'); /* Replace with your image path */
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Lock the background image in place */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .page {
@@ -19,35 +25,45 @@ body {
 
 /* Header Section for The Smiths Move to New Zealand*/
 .header {
-  padding: 1rem;
-  border-radius: 10px;
-  position: relative;
-  height: 300px;     /* Set a fixed height for the blue box */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Prevent content from overflowing */
-  border: 2px solid #4e81c5; /* Light blue border */
-  background-color: rgb(212, 221, 238);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 0; /* Remove padding */
+  border: none; /* Remove border */
+  background-color: transparent; /* Remove background color */
+  box-shadow: none; /* Remove shadow */
+  height: auto; /* Adjust height if necessary */
 }
 
 .header h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #003366; /* Dark blue */
+  color: #003366; 
   margin: 0;
 }
 
+.banner-container {
+  position: relative; /* Allows positioning of child elements */
+  display: flex;
+  flex-direction: column; /* Stack the banner and nav bar vertically */
+  align-items: center; /* Center the content horizontally */
+  /* Remove the background color */
+  background-color: transparent;
+  /* Remove the border radius */
+  border-radius: 0;
+  /* Remove overflow if not needed */
+  overflow: visible;
+  /* Remove padding if it adds spacing */
+  padding: 0;
+  /* Remove box shadow */
+  box-shadow: none;
+}
+
 .banner {
-  border-radius: 10px;
-  width: 100%; /* Allow the width to adjust automatically */
-  height: 100%; /* Make the height fill the blue box */
-  max-width: 1200px; /* Limit the maximum width */
-  object-fit: cover; /* Ensure the entire image is visible without cropping */
-  margin: 0 auto; /* Center the image horizontally */
+  width: 100%; /* Allow the banner to span the full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image scales properly */
+  margin: 0; /* Remove any default margins */
   display: block; /* Treat the image as a block element */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover effect */
+  border-radius: 0; /* Remove rounded corners */
+  box-shadow: none; /* Remove any shadow */
 }
 
 .banner:hover {
@@ -56,6 +72,34 @@ body {
   filter: brightness(70%); /* Darken the banner */
 }
 
+.nav-bar {
+  display: inline-flex; /* Use inline-flex to size the nav bar based on its content */
+  justify-content: center; /* Center the links horizontally */
+  gap: 1rem; /* Add space between links */
+  background-color: rgb(212, 221, 238); /* Light blue background */
+  padding: 0.5rem; /* Add padding around the links */
+  border-radius: 5px; /* Round the corners */
+  margin: 1rem auto; /* Center the nav bar and add space above */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  width: auto; /* Allow the width to adjust based on content */
+}
+
+.nav-link {
+  color: rgb(3, 3, 3); /* Dark text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Set font size */
+  font-weight: bold; /* Make the text bold */
+  padding: 0.5rem 1rem; /* Add padding inside each link */
+  border-radius: 5px; /* Round the corners of each link */
+  background-color: rgb(212, 221, 238); /* Light blue background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-link:hover {
+  transform: scale(1.05); /* Slightly enlarge the link */
+  filter: brightness(70%); /* Darken the link */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
+}
 /* Image Grid Section */
 .image-grid {
   display: flex;
@@ -119,8 +163,8 @@ body {
 
 .plane-sprite {
   position: absolute;
-  top: 60%; /* Start in the middle of the banner */
-  left: -100px; /* Start off-screen to the left */
+  top: 10%; /* Start in the middle of the banner */
+  left: 0px; /* Start off-screen to the left */
   width: 200px; /* Width of a single frame */
   height: 200px; /* Height of a single frame */
   background-image: url('./assets/planesprite-sheet.png'); /* Sprite sheet image */
@@ -132,10 +176,11 @@ body {
 
 .plane-flying-gif {
   position: absolute;
-  top: 60%; /* Adjust the vertical position */
-  left: -100px; /* Start off-screen to the left */
+  top: 15%; /* Adjust the vertical position */
+  left: 0px; /* Start off-screen to the left */
   width: 400px; /* Adjust the size of the GIF */
   height: auto; /* Maintain aspect ratio */
+  z-index: 10; /* Ensure the plane appears in front of other elements */
   animation: fly-across 10s linear infinite; /* Animate the plane */
 }
 

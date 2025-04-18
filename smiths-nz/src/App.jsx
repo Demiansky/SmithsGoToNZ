@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './index.css';
 
 // Import images
-import plane from './assets/plane.png';
+import plane from './assets/smith-banner.png';
 import family from './assets/family.png';
 import robot from './assets/robot.png';
 import checklist from './assets/checklist.png';
@@ -21,12 +21,21 @@ function App() {
   return (
     <Router>
       <div className="page">
+        {/* Flying Plane */}
+        <img src={planeFlyingGif} alt="Flying plane" className="plane-flying-gif" />
         {/* Header Section */}
         <header className="header">
-          <Link to="/">
-            <img src={plane} alt="Plane flying to New Zealand" className="banner" />
-          </Link>
-          <img src={planeFlyingGif} alt="Flying plane" className="plane-flying-gif" />
+          <div className="banner-container">
+            <Link to="/">
+              <img src={plane} alt="Plane flying to New Zealand" className="banner" />
+            </Link>
+          </div>
+          {/* Navigation Bar */}
+          <nav className="nav-bar">
+            <Link to="/meet-the-smiths" className="nav-link">Meet the Smiths</Link>
+            <Link to="/talk-to-smithbot" className="nav-link">Talk to Smithbot</Link>
+            <Link to="/to-do" className="nav-link">To Do</Link>
+          </nav>
         </header>
 
         {/* Routes */}

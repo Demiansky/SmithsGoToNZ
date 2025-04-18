@@ -22,6 +22,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border: 2px solid #4e81c5;
+  margin-bottom: 2rem; /* Add spacing between profile containers */
 }
 
 .profile-image {
@@ -83,6 +84,8 @@
   line-height: 1.5;
   color: #333;
   margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Add space below each paragraph */
+  line-height: 1.5; /* Optional: Adjust line spacing for better readability */
 }
 
 .portfolio-link {

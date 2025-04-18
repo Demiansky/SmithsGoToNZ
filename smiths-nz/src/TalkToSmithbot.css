@@ -1,0 +1,79 @@
+.talk-to-smithbot {
+  text-align: center;
+  padding: 1rem;
+}
+
+.family-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.family-member {
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.family-member.selected {
+  border-color: #4e81c5;
+  transform: scale(1.1);
+}
+
+.family-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.chat-box {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.message {
+  margin: 0.5rem 0;
+}
+
+.message.user {
+  text-align: right;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #4e81c5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003366;
+}
