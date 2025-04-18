@@ -1,3 +1,6 @@
+const API_KEY = import.meta.env.VITE_API_KEY;
+const API_URL = import.meta.env.VITE_API_URL;
+
 import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
@@ -22,7 +25,7 @@ app.post('/api/claude', async (req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': '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',
+        'x-api-key': API_KEY,
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
