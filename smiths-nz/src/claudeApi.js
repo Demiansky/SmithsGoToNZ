@@ -1,6 +1,3 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
-const API_URL = import.meta.env.VITE_API_URL;
-
 export async function fetchClaudeResponse(conversationHistory, system) {
     try {
       const response = await fetch('http://localhost:5000/api/claude', {
