@@ -24,7 +24,7 @@ app.post('/api/claude', async (req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': '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',
+        'x-api-key': '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',
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
