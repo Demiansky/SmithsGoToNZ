@@ -118,7 +118,13 @@ function TalkToSmithbot() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message..."
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSendMessage();
+              }
+            }}
+            placeholder="What would you like to say to Smithbot?"
           />
           <button onClick={handleSendMessage}>Send</button>
         </div>

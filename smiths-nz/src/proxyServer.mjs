@@ -1,8 +1,10 @@
-
-
 import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
 const PORT = 5000;
@@ -11,12 +13,19 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/api/claude', async (req, res) => {
-  console.log('Incoming Request Body:', req.body); // Log the incoming request body
-  const { messages, system } = req.body; // Extract `system` and `messages` from the request body
+  console.log('Incoming Request Body:', req.body);
+  const { messages, system } = req.body;
 
   if (!messages || !Array.isArray(messages)) {
     console.error('Invalid messages array:', messages);
     return res.status(400).send({ error: 'Invalid messages array' });
+  }
+
+  // Get API key from environment variables
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    console.error('API key not found in environment variables');
+    return res.status(500).send({ error: 'API configuration error' });
   }
 
   try {
@@ -24,14 +33,14 @@ app.post('/api/claude', async (req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': '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',
+        'x-api-key': apiKey,
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
         model: 'claude-3-5-sonnet-20241022',
         max_tokens: 300,
-        system, // Pass the system context as a top-level parameter
-        messages, // Forward the messages array
+        system,
+        messages,
       }),
     });
 
