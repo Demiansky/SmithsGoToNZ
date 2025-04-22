@@ -97,7 +97,7 @@ function MeetTheSmiths() {
           </div>
           <div className="text-box">
             <p>
-            Maya Smith is an 11 year old girl and the gentle soul of the Smith family.  She’s sweet, observant, and quietly brilliant.  She’s a bookworm and loves the fantastical realms of science fiction and fantasy, but also has a deep fascination with practical subjects of astronomy, geology, and engineering.  She feels things deeply and is very attuned to beauty, wonder, and the unknown—whether in nature, in books, or in the night sky.
+            Maya Smith is an 9 year old girl and the gentle soul of the Smith family.  She’s sweet, observant, and quietly brilliant.  She’s a bookworm and loves the fantastical realms of science fiction and fantasy, but also has a deep fascination with practical subjects of astronomy, geology, and engineering.  She feels things deeply and is very attuned to beauty, wonder, and the unknown—whether in nature, in books, or in the night sky.
             </p>
             <p>
             Maya’s free time reflects her interests in both the creative and logical.  In addition to science fiction and fantasy books, she loves building Crunch Labs engineering build boxes in her free time and loves puzzle PC games like Portal and Portal 2.  She also has an interest in ancient history, especially antiquities around the time of the Punic Wars (thank you History Oversimplified!) 
@@ -121,7 +121,7 @@ function MeetTheSmiths() {
             Did you know it costs around $10,000 U.S. dollars to ship a cat to New Zealand?  It’s true, I checked!  With three different services!  Can you believe it??  Anyway…  Honey Smith is a completely irreplaceable part of the Smith Family, even though she probably looks and acts like a lot of the available, inexpensive shelter cats in New Zealand.  
             </p>
             <p>
-            Honey is shy with new people at first, but within seconds she’ll revert to Golden Retriever energy and savage you with love and affection.  She will love you so much, she’ll even DROOL like a Golden Retriever.  She’s like a furry satellite that orbits her favorite humans.  If you are a programmer, she WILL introduce bugs into your code or sabotage your website about moving your family to New Zealand.
+            Honey is shy with new people at first, but within seconds she’ll revert to Golden Retriever energy and savage you with love and affection.  She will love you so much, she’ll even DROOL like a Golden Retriever.  She’s like a furry satellite that orbits her favorite humans.  If you are a programmer, she WILL introduce bugs into your code or sabotage your website about moving your family to New Zealand by falling asleep on the keyboard.
             </p>
             <p>
             Honey’s vaccinations are completely up to date and has taken a 3 part course in respecting the native New Zealand wildlife, including the threatened native Kiwi birds!!
