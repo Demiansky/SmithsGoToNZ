@@ -11,6 +11,7 @@ import family from './assets/family.png';
 import robot from './assets/robot.png';
 import checklist from './assets/checklist.png';
 import planeFlyingGif from './assets/plane-flying.gif';
+import BackgroundMusicComponent from './components/BackgroundMusic';
 
 // Import pages
 import MeetTheSmiths from './MeetTheSmiths';
@@ -21,8 +22,12 @@ function App() {
   return (
     <Router>
       <div className="page">
+        {/* Fixed Music Button - Move it outside the navbar */}
+        <BackgroundMusicComponent />
+        
         {/* Flying Plane */}
         <img src={planeFlyingGif} alt="Flying plane" className="plane-flying-gif" />
+        
         {/* Header Section */}
         <header className="header">
           <div className="banner-container">
@@ -30,7 +35,7 @@ function App() {
               <img src={plane} alt="Plane flying to New Zealand" className="banner" />
             </Link>
           </div>
-          {/* Navigation Bar */}
+          {/* Navigation Bar - Music button removed */}
           <nav className="nav-bar">
             <Link to="/meet-the-smiths" className="nav-link">Meet the Smiths</Link>
             <Link to="/talk-to-smithbot" className="nav-link">Talk to Smithbot</Link>
