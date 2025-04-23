@@ -151,6 +151,49 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
 }
 
+.image-card p {
+  position: absolute; 
+  top: 10px;
+  left: 50%;
+  width: 75%;
+  transform: translateX(-50%) scale(1);
+  background-color: rgba(175, 183, 230, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 2rem; /* Reduced from 3rem */
+  font-weight: bold;
+  color: #0c0404;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Add these media queries for responsive design */
+@media (max-width: 768px) {
+  .image-card p {
+    font-size: 1.5rem; /* Smaller on tablets */
+    width: 85%;
+  }
+  
+  .image-grid {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+  
+  .image-card {
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-card p {
+    font-size: 1.2rem; /* Even smaller on phones */
+    top: 5px;
+  }
+}
+
+
+
 .image-card a {
   text-decoration: none;
   color: inherit;
