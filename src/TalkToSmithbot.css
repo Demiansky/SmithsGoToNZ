@@ -122,3 +122,101 @@ button {
 button:hover {
   background-color: #003366;
 }
+
+@media (max-width: 768px) {
+  .talk-to-smithbot {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 95%;
+  }
+  
+  .smith-header {
+    font-size: 20px;
+    padding: 10px;
+    max-width: 90%;
+  }
+  
+  .family-selector {
+    flex-wrap: wrap; /* Allow family members to wrap to next line */
+    gap: 0.5rem;
+  }
+  
+  .family-member {
+    min-width: 80px;
+    padding: 0.5rem;
+  }
+  
+  .family-member img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .family-member p {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  .talk-to-smithbot {
+    padding: 0.75rem;
+    margin: 0.5rem auto;
+  }
+  
+  .smith-header {
+    font-size: 18px;
+    padding: 8px;
+  }
+  
+  .family-selector {
+    justify-content: space-around;
+  }
+  
+  .family-member {
+    min-width: 70px;
+    padding: 0.4rem;
+  }
+  
+  .family-member img {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+  }
+  
+  .chat-box {
+    max-height: 250px;
+  }
+  
+  .input-container {
+    flex-direction: column;
+  }
+  
+  .input-container input {
+    margin-bottom: 0.5rem;
+    padding: 0.75rem; /* Larger touch target */
+  }
+  
+  .input-container button {
+    width: 100%;
+    padding: 0.75rem; /* Larger touch target */
+  }
+}
+
+/* Make messages more readable on mobile */
+@media (max-width: 768px) {
+  .message {
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin: 0.75rem 0;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .message.user {
+    background-color: rgba(78, 129, 197, 0.2);
+  }
+  
+  .message.bot {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
