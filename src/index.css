@@ -46,16 +46,28 @@ body {
   display: flex;
   flex-direction: column; /* Stack the banner and nav bar vertically */
   align-items: center; /* Center the content horizontally */
-  /* Remove the background color */
   background-color: transparent;
-  /* Remove the border radius */
   border-radius: 0;
-  /* Remove overflow if not needed */
   overflow: visible;
-  /* Remove padding if it adds spacing */
   padding: 0;
-  /* Remove box shadow */
   box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  /* Fix the plane to a containing element to prevent it affecting scroll */
+  .banner-container {
+    position: relative;
+    isolation: isolate;
+    height: 150px; /* Set explicit height for plane container */
+    overflow: hidden;
+  }
+  
+  /* More precise plane positioning */
+  .plane-flying-gif {
+    position: absolute;
+    top: 60px; /* Adjust to fit within banner area */
+    transform-origin: center center;
+  }
 }
 
 .banner {
@@ -287,7 +299,22 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll; /* Change from fixed to scroll on mobile */
+    background-attachment: scroll; /* Already have this */
+    background-size: 100% 100vh; /* Fix the background to viewport size */
+    background-position: top center; /* Fix position to top */
+    height: auto; /* Allow content to determine height */
+  }
+  
+  /* Add this to prevent content shifting */
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Prevent overscroll bouncing effect */
+  html {
+    overscroll-behavior: none;
   }
   
   /* Optimize plane animation for mobile */
