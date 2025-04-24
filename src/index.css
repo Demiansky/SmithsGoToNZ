@@ -203,7 +203,7 @@ body {
 @media (max-width: 768px) {
   .image-card p {
     font-size: 1.5rem; /* Smaller on tablets */
-    width: 85%;
+    width: 65%;
   }
   
   .image-grid {
