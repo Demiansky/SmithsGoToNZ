@@ -7,12 +7,25 @@
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: rgb(212, 221, 238);
+  position: relative; /* Add this */
+  z-index: 1; /* Add this */
+}
+
+/* Add a pseudo-element for the fixed background */
+.talk-to-smithbot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: 
     linear-gradient(rgba(212, 221, 238, 0.8), rgba(212, 221, 238, 0.8)),
     url('./assets/RobotBackground.png');
-  background-size: contain; /* Use the image's actual size */
-  background-attachment: fixed; /* Keep the background fixed when scrolling */
+  background-size: contain;
   background-position: center;
+  z-index: -1;
+  border-radius: 15px; /* Match the parent container */
 }
 
 .smith-header {
