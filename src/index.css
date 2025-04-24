@@ -21,6 +21,8 @@ body {
   max-width: 1200px;
   text-align: center;
   padding: 1rem;
+  position: relative; /* Create positioning context */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Header Section for The Smiths Move to New Zealand*/
@@ -261,13 +263,15 @@ body {
 }
 
 .plane-flying-gif {
-  position: absolute;
-  top: 15%; /* Adjust the vertical position */
-  left: 0px; /* Start off-screen to the left */
-  width: 400px; /* Adjust the size of the GIF */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 10; /* Ensure the plane appears in front of other elements */
-  animation: fly-across 10s linear infinite; /* Animate the plane */
+  position: fixed; /* Change from absolute to fixed */
+  top: 15%;
+  left: 0; /* Start at left edge */
+  width: 400px;
+  height: auto;
+  z-index: 10;
+  animation: fly-across 10s linear infinite;
+  pointer-events: none; /* Prevents interaction with plane */
+  will-change: transform; /* Performance optimization */
 }
 
 @media (max-width: 768px) {
@@ -276,18 +280,14 @@ body {
     top: 10%;
     animation-duration: 8s; /* Faster animation */
   }
-  
-  .banner {
-    max-width: 100%;
-  }
 }
 
 @keyframes fly-across {
   0% {
-    left: -1000px; /* Start off-screen to the left */
+    transform: translateX(-100%); /* Start off-screen using transform */
   }
   100% {
-    left: 100%; /* End off-screen to the right */
+    transform: translateX(calc(100vw)); /* Move across viewport width */
   }
 }
 
