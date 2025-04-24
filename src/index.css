@@ -84,6 +84,20 @@ body {
   width: auto; /* Allow the width to adjust based on content */
 }
 
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 80%;
+  }
+  
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+}
+
 .nav-link {
   color: rgb(3, 3, 3); /* Dark text color */
   text-decoration: none; /* Remove underline */
@@ -185,9 +199,9 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .image-card p {
-    font-size: 1.2rem; /* Even smaller on phones */
+    font-size: 0.5rem; /* Even smaller on phones */
     top: 5px;
   }
 }
@@ -227,6 +241,18 @@ body {
   animation: fly-across 10s linear infinite; /* Animate the plane */
 }
 
+@media (max-width: 768px) {
+  .plane-flying-gif {
+    width: 250px; /* Smaller on mobile */
+    top: 10%;
+    animation-duration: 8s; /* Faster animation */
+  }
+  
+  .banner {
+    max-width: 100%;
+  }
+}
+
 @keyframes fly-across {
   0% {
     left: -1000px; /* Start off-screen to the left */
@@ -254,6 +280,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0.5rem;
+  }
+  
+  .music-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
 }
 
 .music-toggle:hover {
