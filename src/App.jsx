@@ -21,12 +21,13 @@ import ToDo from './ToDo';
 function App() {
   return (
     <Router>
+      {/* Flying Plane */}
+      <div className="fixed-plane-container">
+        <img src={planeFlyingGif} alt="Flying plane" className="plane-flying-gif" />
+      </div>
       <div className="page">
         {/* Fixed Music Button - Move it outside the navbar */}
         <BackgroundMusicComponent />
-        
-        {/* Flying Plane */}
-        <img src={planeFlyingGif} alt="Flying plane" className="plane-flying-gif" />
         
         {/* Header Section */}
         <header className="header">
