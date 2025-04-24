@@ -299,8 +299,8 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll; /* Already have this */
-    background-size: 100% 100vh; /* Fix the background to viewport size */
+    background-attachment: scroll;
+    background-size: cover;
     background-position: top center; /* Fix position to top */
     height: auto; /* Allow content to determine height */
   }
@@ -364,8 +364,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Make container padding consistent */
   .page {
-    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem; /* Ensure equal padding on both sides */
+    box-sizing: border-box;
   }
   
   .music-toggle {
