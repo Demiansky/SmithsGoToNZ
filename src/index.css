@@ -90,7 +90,8 @@ body {
 
 @media (max-width: 768px) {
   .nav-bar {
-    flex-direction: column;
+    flex-direction: row;
+    border-radius: 3px;
     gap: 0.5rem;
     width: 80%;
   }
@@ -104,9 +105,10 @@ body {
 
 @media (max-width: 550px) {
   .nav-bar {
-    flex-direction: column;
+    flex-direction: row;
+    border-radius: 1px;
     gap: 0.5rem;
-    width: 80%;
+    width: 70%;
   }
   
   .nav-link {
