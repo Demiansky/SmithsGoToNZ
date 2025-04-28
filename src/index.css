@@ -41,6 +41,37 @@ body {
   margin: 0;
 }
 
+.homepage-info-box {
+  background-color: rgba(212, 221, 238, 0.8); /* Light blue background with transparency */
+  border: 2px solid #4e81c5;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin: 1rem auto 2rem;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  color: #0c0404;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .homepage-info-box {
+    padding: 1.25rem;
+    max-width: 90%;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-box {
+    padding: 1rem;
+    max-width: 95%;
+    font-size: 0.9rem;
+  }
+}
+
 .banner-container {
   position: relative; /* Allows positioning of child elements */
   display: flex;

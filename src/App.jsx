@@ -49,26 +49,33 @@ function App() {
           <Route
             path="/"
             element={
-              <section className="image-grid">
-                <div className="image-card">
-                  <Link to="/meet-the-smiths">
-                    <img src={family} alt="Family in New Zealand" />
-                    <p>Meet the Smiths</p>
-                  </Link>
+              <>
+                {/* Add this info box above your image grid */}
+                <div className="homepage-info-box">
+                  <p>Kia ora, we're the Smith family! It's been a long time dream of ours to move to New Zealand, and now we're finally making it a reality. Would you like to make this a reality with us? Click "Meet the Smiths" to get to know us, or talk to AI versions of the Smiths with our embedded Smith Bot web app! Chur!</p>
                 </div>
-                <div className="image-card">
-                  <Link to="/talk-to-smithbot">
-                    <img src={robot} alt="Robot waving in New Zealand" />
-                    <p>Talk to Smithbot</p>
-                  </Link>
-                </div>
-                <div className="image-card">
-                  <Link to="/to-do">
-                    <img src={checklist} alt="Checklist and stress meter" />
-                    <p>To Do</p>
-                  </Link>
-                </div>
-              </section>
+        
+                <section className="image-grid">
+                  <div className="image-card">
+                    <Link to="/meet-the-smiths">
+                      <img src={family} alt="Family in New Zealand" />
+                      <p>Meet the Smiths</p>
+                    </Link>
+                  </div>
+                  <div className="image-card">
+                    <Link to="/talk-to-smithbot">
+                      <img src={robot} alt="Robot waving in New Zealand" />
+                      <p>Talk to Smithbot</p>
+                    </Link>
+                  </div>
+                  <div className="image-card">
+                    <Link to="/to-do">
+                      <img src={checklist} alt="Checklist and stress meter" />
+                      <p>To Do</p>
+                    </Link>
+                  </div>
+                </section>
+              </>
             }
           />
           <Route path="/meet-the-smiths" element={<MeetTheSmiths />} />
