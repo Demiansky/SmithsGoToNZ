@@ -52,7 +52,7 @@ function App() {
               <>
                 {/* Add this info box above your image grid */}
                 <div className="homepage-info-box">
-                  <p>Kia ora, we're the Smith family! It's been a long time dream of ours to move to New Zealand, and now we're finally making it a reality. Would you like to make this a reality with us? Click "Meet the Smiths" to get to know us, or talk to AI versions of the Smiths with our embedded Smith Bot web app! Chur!</p>
+                  <p>Kia ora, we're the Smith family! It's been a long time dream of ours to move to New Zealand to start a new life, and now we're finally making it a reality. Would you like to make this a reality with us? Click "Meet the Smiths" to get to know us, or talk to AI versions of the Smiths with our embedded Smith Bot web app! Chur!</p>
                 </div>
         
                 <section className="image-grid">
