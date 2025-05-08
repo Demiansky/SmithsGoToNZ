@@ -65,7 +65,7 @@ function App() {
         onClick={toggleMusic}
         aria-label={isMusicPlaying ? "Mute music" : "Play music"}
       >
-        {isMusicPlaying ? "🔊" : "🔇"}
+        {isMusicPlaying ? "🔊 Music" : "🔇 Music"}
       </button>
 
       {showSplash ? (
