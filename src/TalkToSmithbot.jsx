@@ -16,22 +16,23 @@ const familyMembers = [
 ];
 
 function TalkToSmithbot() {
-  const chatBoxRef = useRef(null); // To keep track of chat box scroll position
+  const chatBoxRef = useRef(null);
   const [selectedMember, setSelectedMember] = useState(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [messageCounter, setMessageCounter] = useState(0);
-  const [shouldScrollToBottom, setShouldScrollToBottom] = useState(false); // Add a state to track when to scroll (sent or received)
+  const [shouldScrollToBottom, setShouldScrollToBottom] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  // Function to scroll to the bottom of the chat
+  const scrollToBottom = () => {
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
+  };
 
-    // Function to scroll to the bottom of the chat
-    const scrollToBottom = () => {
-      if (chatBoxRef.current) {
-        chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
-      }
-    };
-
-    // Use effect to scroll when messages change
-    useEffect(() => {
+  // Use effect to scroll when messages change
+  useEffect(() => {
     if (shouldScrollToBottom) {
       scrollToBottom();
       setShouldScrollToBottom(false);
@@ -43,10 +44,11 @@ function TalkToSmithbot() {
   
     const userMessage = { sender: 'User', text: input };
     setMessages((prev) => [...prev, userMessage]);
-
-    // Trigger scroll after sending user message
     setShouldScrollToBottom(true);
 
+    // Set loading state to true
+    setIsLoading(true);
+    
     // Increment the message counter
     const newCount = messageCounter + 1;
     setMessageCounter(newCount);
@@ -60,8 +62,6 @@ function TalkToSmithbot() {
       
       // Always add the character context if we're resetting or at the start
       if (shouldReset || messages.length === 0) {
-      //  conversationHistory.push({ role: 'user', content: selectedMember.context });
-        
         // For a true reset, only add the context and the current input
         if (shouldReset) {
           console.log('Resetting conversation history after 10 messages');
@@ -92,6 +92,12 @@ function TalkToSmithbot() {
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error('Error fetching response:', error);
+      // Optionally show an error message in the chat
+      // setMessages((prev) => [...prev, { sender: 'System', text: 'Sorry, there was an error getting a response.' }]);
+    } finally {
+      // Set loading to false after the API call completes (whether successful or failed)
+      setIsLoading(false);
+      setShouldScrollToBottom(true);
     }
   
     setInput('');
@@ -121,12 +127,20 @@ function TalkToSmithbot() {
         ))}
       </div>
       <div className="chat-container">
-        <div className="chat-box">
+        <div className="chat-box" ref={chatBoxRef}>
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender === 'User' ? 'user' : 'bot'}`}>
               <strong>{msg.sender}:</strong> {msg.text}
             </div>
           ))}
+          
+          {/* Loading indicator */}
+          {isLoading && selectedMember && (
+            <div className="loading-indicator">
+              <div className="spinner"></div>
+              <p>{selectedMember.name} is thinking...</p>
+            </div>
+          )}
         </div>
         <div className="input-container">
           <input
@@ -140,8 +154,11 @@ function TalkToSmithbot() {
               }
             }}
             placeholder="What would you like to say to Smithbot?"
+            disabled={isLoading} // Optionally disable input while loading
           />
-          <button onClick={handleSendMessage}>Send</button>
+          <button onClick={handleSendMessage} disabled={isLoading}>
+            Send
+          </button>
         </div>
       </div>
     </div>
