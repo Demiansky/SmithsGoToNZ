@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './TalkToSmithbot.css';
 import { fetchClaudeResponse } from './claudeApi';
 import raniImage from './assets/RaniBot.png';
@@ -16,16 +16,36 @@ const familyMembers = [
 ];
 
 function TalkToSmithbot() {
+  const chatBoxRef = useRef(null); // To keep track of chat box scroll position
   const [selectedMember, setSelectedMember] = useState(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [messageCounter, setMessageCounter] = useState(0);
+  const [shouldScrollToBottom, setShouldScrollToBottom] = useState(false); // Add a state to track when to scroll (sent or received)
+
+    // Function to scroll to the bottom of the chat
+    const scrollToBottom = () => {
+      if (chatBoxRef.current) {
+        chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+      }
+    };
+
+    // Use effect to scroll when messages change
+    useEffect(() => {
+    if (shouldScrollToBottom) {
+      scrollToBottom();
+      setShouldScrollToBottom(false);
+    }
+  }, [messages, shouldScrollToBottom]);
 
   const handleSendMessage = async () => {
     if (!selectedMember || !input.trim()) return;
   
     const userMessage = { sender: 'User', text: input };
     setMessages((prev) => [...prev, userMessage]);
+
+    // Trigger scroll after sending user message
+    setShouldScrollToBottom(true);
 
     // Increment the message counter
     const newCount = messageCounter + 1;

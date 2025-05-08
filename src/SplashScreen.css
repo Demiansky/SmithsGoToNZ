@@ -1,0 +1,28 @@
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/background.png'); /* Complete background image */
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15vh;
+    overflow: hidden;
+  }
+  
+  .splash-banner {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .splash-banner {
+      max-width: 90%;
+    }
+  }
