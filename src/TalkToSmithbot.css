@@ -30,13 +30,14 @@
 
 .smith-header {
   background-color: rgb(212, 221, 238, 0.8);
-  border: 1px solid #4e81c5;
-  border-radius: 4px;
+  border: 2px solid #4e81c5;
+  border-radius: 10px;
   padding: 15px;
   max-width: 300px;
   margin: 0 auto 20px auto;
   font-size: 24px;
   text-align: center;
+  color: #003366;
 }
 
 .family-selector {

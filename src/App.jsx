@@ -8,6 +8,9 @@ import plane from './assets/smith-banner.png';
 import family from './assets/family.png';
 import robot from './assets/robot.png';
 import checklist from './assets/checklist.png';
+import everythingellie from './assets/everything-ellie.png';
+import siteskillstack from './assets/siteskillstack.png';
+import grandparents from './assets/grandparents.png';
 import planeFlyingGif from './assets/plane-flying.gif';
 import BackgroundMusicComponent from './assets/BackgroundMusic.mp3';
 
@@ -15,6 +18,9 @@ import BackgroundMusicComponent from './assets/BackgroundMusic.mp3';
 import MeetTheSmiths from './MeetTheSmiths';
 import TalkToSmithbot from './TalkToSmithbot';
 import ToDo from './ToDo';
+import HallGrandparents from './HallGrandparents';
+import EverythingEllie from './EverythingEllie';
+import SiteSkillstack from './SiteSkillstack';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -97,10 +103,11 @@ function App() {
                 element={
                   <>
                     <div className="homepage-info-box">
-                      <p>Kia ora, we're the Smith family! It's been a long time dream of ours to move to New Zealand to start a new life, and now we're finally making it a reality. Would you like to make this a reality with us? Click "Meet the Smiths" to get to know us, or talk to AI versions of the Smiths with our embedded Smith Bot web app! Chur!</p>
+                      <p>Kia ora, we're the Smith family! It's been a long time dream of ours to move to New Zealand to start a new life, and now we're finally making it a reality. Would you like to make this a reality with us? Click "Meet the Smiths" to get to know us, or talk to AI versions of the Smiths with our embedded Smith Bot web app!</p>
                     </div>
                 
                     <section className="image-grid">
+                      {/* First Row */}
                       <div className="image-card">
                         <Link to="/meet-the-smiths">
                           <img src={family} alt="Family in New Zealand" />
@@ -119,6 +126,26 @@ function App() {
                           <p>To Do</p>
                         </Link>
                       </div>
+
+                      {/* Second Row */}
+                      <div className="image-card">
+                        <Link to="/everything-ellie">
+                          <img src={everythingellie} alt="Ellie's travel blog" />
+                          <p>Ellie's Travel Blog</p>
+                        </Link>
+                      </div>
+                      <div className="image-card">
+                        <Link to="/site-skillstack">
+                          <img src={siteskillstack} alt="How I built the website" />
+                          <p>Site Skillstack (How I made it!)</p>
+                        </Link>
+                      </div>
+                      <div className="image-card">
+                        <Link to="/HallGrandparents">
+                          <img src={grandparents} alt="Sad Grandparents" />
+                          <p>Hall of Sad Grandparents</p>
+                        </Link>
+                      </div>
                     </section>
                   </>
                 }
@@ -126,6 +153,9 @@ function App() {
               <Route path="/meet-the-smiths" element={<MeetTheSmiths />} />
               <Route path="/talk-to-smithbot" element={<TalkToSmithbot />} />
               <Route path="/to-do" element={<ToDo />} />
+              <Route path="/HallGrandparents" element={<HallGrandparents />} />
+              <Route path="/everything-ellie" element={<EverythingEllie />} />
+              <Route path="/site-skillstack" element={<SiteSkillstack />} />
             </Routes>
           </div>
         </>

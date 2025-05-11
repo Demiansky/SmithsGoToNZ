@@ -14,7 +14,7 @@
   .todo-header {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
   }
   
   .header-box {
@@ -97,7 +97,7 @@
     position: relative;
     width: 450px;
     flex-shrink: 0;
-    background-color: #e0af45;
+    background-color: #ffd270;
     border: 6px solid #1e3310;
     border-radius: 15px;
     padding: 20px;
@@ -216,7 +216,7 @@
   flex-shrink: 0;
   flex-grow: 0; 
   margin-top: 40px;
-  background-color: #e0af45;
+  background-color: #ffd270;
   border: 6px solid #1e3310;
   border-radius: 15px;
   padding: 10px;
