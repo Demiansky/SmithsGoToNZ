@@ -132,13 +132,13 @@ function App() {
 
                       {/* Second Row */}
                       <div className="image-card">
-                        <Link to="/everything-ellie">
+                        <Link to="/EverythingEllie">
                           <img src={everythingellie} alt="Ellie's travel blog" />
                           <p>Ellie's Travel Blog</p>
                         </Link>
                       </div>
                       <div className="image-card">
-                        <Link to="/site-skillstack">
+                        <Link to="/SiteSkillstack">
                           <img src={siteskillstack} alt="How I built the website" />
                           <p>Site Skillstack (How I made it!)</p>
                         </Link>
@@ -157,8 +157,8 @@ function App() {
               <Route path="/talk-to-smithbot" element={<TalkToSmithbot />} />
               <Route path="/to-do" element={<ToDo />} />
               <Route path="/HallGrandparents" element={<HallGrandparents />} />
-              <Route path="/everything-ellie" element={<EverythingEllie />} />
-              <Route path="/site-skillstack" element={<SiteSkillstack />} />
+              <Route path="/EverythingEllie" element={<EverythingEllie />} />
+              <Route path="/SiteSkillstack" element={<SiteSkillstack />} />
             </Routes>
           </div>
         </>

@@ -38,7 +38,7 @@ function HallGrandparents() {
           <div className="quote">"One day you'll miss those 24/7 pharmacies with 7 aisles of candy but just one pharmacist."</div>
           <div className="quote">"New Zealand doesn't sound like the kind of country that would have 'freedom fries'."</div>
           <div className="quote">"You'll miss every meal coming with 17 plastic utensils and 12 straws. Trust me."</div>
-          <div className="quote">"News coverage in New Zealand just doesn't sound as exciting as it is here. I heard just the other day that an actual pitbull got elected to our House of Representatives!"</div>
+          <div className="quote">"News coverage in New Zealand just doesn't sound as exciting as it is here. I heard just the other day that an actual pitbull got elected to the U.S. House of Representatives!"</div>
         </div>
       </div>
       
