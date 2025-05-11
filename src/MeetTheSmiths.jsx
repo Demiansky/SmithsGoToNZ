@@ -6,6 +6,10 @@ import ellieProfileImage from './assets/ellieprofile.png';
 import honeyProfileImage from './assets/honeyprofile.png';
 
 function MeetTheSmiths() {
+  // Function to open PDF in new tab
+  const openResumePDF = (pdfPath) => {
+    window.open(pdfPath, '_blank');
+  };
   return (
     <div className="meet-the-smiths">
       <div className="header-box">
@@ -42,7 +46,12 @@ function MeetTheSmiths() {
               loves all things creative.  No phrase in the English language gives him more excitement than 
               "it can't be done."
             </p>
-            <a href="#" className="portfolio-link">Extended Portfolio Link</a>
+            <button 
+              className="portfolio-link" 
+              onClick={() => openResumePDF('/resumes/dana-resume.pdf')}
+            >
+              Extended Portfolio Link
+            </button>
           </div>
         </div>
       </div>
@@ -62,7 +71,12 @@ function MeetTheSmiths() {
             <p>
             Now relocating to New Zealand, Rani is energized by the new challenges ahead—especially those around climate change, sustainable water resource management, and source water protection. Outside of work, she enjoys music, baking elaborate cakes, diving deep into strategy games, and spending time with her family. She lives by the words of Marie Curie: “Nothing in life is to be feared, only to be understood.”
             </p>
-            <a href="#" className="portfolio-link">Extended Portfolio Link</a>
+            <button 
+              className="portfolio-link" 
+              onClick={() => openResumePDF('/resumes/rani-resume.pdf')}
+            >
+              Extended Portfolio Link
+            </button>
           </div>
         </div>
       </div>

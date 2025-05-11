@@ -94,6 +94,9 @@ function App() {
                 <Link to="/meet-the-smiths" className="nav-link">Meet the Smiths</Link>
                 <Link to="/talk-to-smithbot" className="nav-link">Talk to Smithbot</Link>
                 <Link to="/to-do" className="nav-link">To Do</Link>
+                <Link to="/EverythingEllie" className="nav-link">Ellie Blog</Link>
+                <Link to="/SiteSkillstack" className="nav-link">Site Skills</Link>
+                <Link to="/HallGrandparents" className="nav-link">Sad Grandparents</Link>
               </nav>
             </header>
 

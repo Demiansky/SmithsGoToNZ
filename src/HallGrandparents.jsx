@@ -10,7 +10,7 @@ function HallGrandparents() {
       <h1 className="grandparents-title">Hall of Sad Grandparents</h1>
       
       <div className="grandparents-intro">
-        <p>Life is about hard choices. One of those hard choices now is leaving behind family in the United States. Try as they may, the grandparents couldn't quite convince us to stay! Below is the many attempts they made, which almost swayed us! [DISCLAIMER: All grandparents on this page are AI generated with Stable Diffusion, and the real grandparents are loving, supportive, and have been encouraged to work on getting their grandparent visas!]</p>
+        <p>Life is about hard choices. One of those hard choices is leaving behind family in the proud, mighty USA <b>*screeching eagle sound*</b>. Try as they may, the grandparents couldn't quite convince us to stay! Below is the many attempts they made, which almost swayed us! [DISCLAIMER: All grandparents on this page are AI generated with Stable Diffusion, and the real grandparents are loving, supportive, and have been encouraged to work on getting their grandparent visas!]</p>
       </div>
       
       {/* Pop Pop */}
@@ -20,7 +20,7 @@ function HallGrandparents() {
         </div>
         <div className="grandparent-content">
           <h2>Pop Pop</h2>
-          <div className="quote">"How will you feel safe if every police department isn't armed with a tank?"</div>
+          <div className="quote">"How will you feel safe when every police department isn't armed with a tank?"</div>
           <div className="quote">"You might be happy at first, until you wake up one day and crave a deep-fried Twinkie."</div>
           <div className="quote">"How will you get by without 15 available brands of toothpaste?"</div>
           <div className="quote">"How will your kids learn about consequences without 'Florida Man'?"</div>
@@ -38,7 +38,7 @@ function HallGrandparents() {
           <div className="quote">"One day you'll miss those 24/7 pharmacies with 7 aisles of candy but just one pharmacist."</div>
           <div className="quote">"New Zealand doesn't sound like the kind of country that would have 'freedom fries'."</div>
           <div className="quote">"You'll miss every meal coming with 17 plastic utensils and 12 straws. Trust me."</div>
-          <div className="quote">"News coverage in New Zealand just doesn't sound as exciting as it is here. I heard just the other day that a squirrel got elected to our House of Representatives!"</div>
+          <div className="quote">"News coverage in New Zealand just doesn't sound as exciting as it is here. I heard just the other day that an actual pitbull got elected to our House of Representatives!"</div>
         </div>
       </div>
       
@@ -52,7 +52,7 @@ function HallGrandparents() {
           <div className="quote">"At least in the U.S.A. you know for certain the schools are underfunded. Abroad? Who knows."</div>
           <div className="quote">"You’ll miss being able to sue someone over emotional trauma caused by a cold fast food burrito."</div>
           <div className="quote">"No more calculating your insurance deductible while bleeding out in a hospital lobby? Seems un-American to me!"</div>
-          <div className="quote">"You’ll miss the rich cultural experience of drive-thru everything."</div>
+          <div className="quote">"You’ll miss the rich cultural experience of drive through gun and liquor stores!"</div>
         </div>
       </div>
     </div>

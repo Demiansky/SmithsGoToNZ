@@ -253,24 +253,25 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Add these media queries for responsive design */
+/* Tablet Styles */
 @media (max-width: 768px) {
   .image-card p {
-    font-size: 1.5rem; /* Smaller on tablets */
-    width: 65%;
+    font-size: 1.2rem; /* Smaller on tablets */
+    padding: 0.3rem 0.5rem; /* Even smaller padding */
+    width: 70%;
   }
   
   .image-grid {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    grid-gap: 1rem; /* Reduced gap */
   }
   
   .image-card {
-    max-width: 80%;
-    margin-bottom: 1.5rem;
+    padding: 0.5rem; /* Reduced padding */
   }
 }
 
+/* Mobile Styles */
 @media (max-width: 480px) {
   .image-card p {
     font-size: 1.5rem !important; /* Force override with !important */
@@ -281,9 +282,7 @@ body {
   }
   
   .image-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Single column on small screens */
   }
   
   .image-card {
