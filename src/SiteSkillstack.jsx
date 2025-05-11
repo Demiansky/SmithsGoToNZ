@@ -18,8 +18,8 @@ import githubImg from './assets/site-skills/github.png';
 import claudeApiImg from './assets/site-skills/claude-api.png';
 import vsCodeImg from './assets/site-skills/vs-code.png';
 import miroImg from './assets/site-skills/miro.png';
-import audacityImg from './assets/site-skills/Audacity.png';
-import gimpImg from './assets/site-skills/GIMP.png';
+import audacityImg from './assets/site-skills/audacity.png';
+import gimpImg from './assets/site-skills/gimp.png';
 
 function SiteSkillstack() {
   const containerRef = useRef(null);
