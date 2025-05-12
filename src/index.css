@@ -226,7 +226,7 @@ body {
     position: absolute;
     top: 60px; /* Adjust to fit within banner area */
     transform-origin: center center;
-    z-index: 1; /* Ensure plane is behind content */
+    z-index: 100; /* Ensure plane is behind content */
   }
   
   .nav-bar {
@@ -443,7 +443,7 @@ body {
     top: 100px;
     width: 250px;
     will-change: transform;
-    z-index: 1; /* Changed from 10 to 1 */
+    z-index: 100; /* Changed from 10 to 1 */
     animation: fly-across-mobile 8s linear infinite;
   }
   
