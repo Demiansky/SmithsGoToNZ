@@ -10,7 +10,7 @@ function HallGrandparents() {
       <h1 className="grandparents-title">Hall of Sad Grandparents</h1>
       
       <div className="grandparents-intro">
-        <p>Life is about hard choices. One of those hard choices is leaving behind family in the proud, mighty USA <b>*screeching eagle sound*</b>. Try as they may, the grandparents couldn't quite convince us to stay! Below is the many attempts they made, which almost swayed us! [DISCLAIMER: All grandparents on this page are AI generated with Stable Diffusion, and the real grandparents are loving, supportive, and have been encouraged to work on getting their grandparent visas!]</p>
+        <p>Life is about hard choices. One of those hard choices is leaving behind family in the proud, mighty USA <b>*screeching eagle sound*</b>. Try as they may, the grandparents couldn't quite convince us to stay! Below is the many attempts they made, which almost swayed us! [DISCLAIMER: All grandparents on this page are AI generated with Stable Diffusion, and the real grandparents are loving, supportive, and have been encouraged to work on getting their grandparent visas!</p>
       </div>
       
       {/* Pop Pop */}

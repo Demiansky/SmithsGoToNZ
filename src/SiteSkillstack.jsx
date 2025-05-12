@@ -162,8 +162,10 @@ function SiteSkillstack() {
   
   return (
     <div className="skillstack-container">
-      <h1 className="skillstack-title">Site Skillstack</h1>
-      
+      <h1 className="skillstack-title">Site Skills</h1>
+      <div className="site-skills-text-box">
+        <p>Wonder what skills I used to build this website?  Take a peak down below!  Everything you see here was custom built by me, Dana Smith.  Design, architecture, artwork, graphic design, frontend, backend, programming, copy, and cheesy jokes!  Down below are the various skills on display, programming languages, and tools used!</p>
+      </div>
       <section className="skills-section">
         {/* Skills carousel section */}
         <div className="skills-carousel-container" ref={containerRef}>
@@ -180,9 +182,13 @@ function SiteSkillstack() {
           </div>
         </div>
       </section>
-
+      
+      <h1 className="skillstack-title">Tools Used</h1>
+      <div className="site-skills-text-box">
+        <p>Below are some screen caps of me using a few of the additional tools and programs I used to assist in producing code and content along the way.  You might have the skills to build a house, but those skills aren't much good without hammers, drills, and nails!  The same is true of software engineering!</p>
+      </div>
       <section className="tools-section">
-        <h2>Tools Used</h2>
+        
         <div className="tools-grid">
           {tools.map((tool, index) => (
             <div key={index} className="tool-card">
