@@ -1,4 +1,37 @@
-/* Reset and global styles */
+
+:root {
+  /* Color scheme */
+  --primary-color: #4e81c5;
+  --primary-dark: #003366;
+  --primary-light: #e6f0ff;
+  --primary-mid: #c5d8f7;
+  --secondary-bg: rgba(212, 221, 238, 1);
+  --text-color: #0c0404;
+  --text-secondary: #333;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Borders & Shadows */
+  --border-radius-sm: 4px;
+  --border-radius: 10px;
+  --border-radius-lg: 12px;
+  --border-standard: 2px solid var(--primary-color);
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== 1. GLOBAL/BASE STYLES ===== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
 body {
   margin: 0;
   padding: 0;
