@@ -369,7 +369,7 @@ body {
   left: 0; /* Start at left edge */
   width: 400px;
   height: auto;
-  z-index: 1; /* Changed from 10 to 1 to ensure it stays behind content */
+  z-index: 100; /* Changed from 10 to 1 to ensure it stays behind content */
   animation: fly-across 10s linear infinite;
   will-change: transform; /* Performance optimization */
   pointer-events: none; /* Prevents interaction with plane */
