@@ -32,6 +32,8 @@ body {
   background-color: transparent; /* Remove background color */
   box-shadow: none; /* Remove shadow */
   height: auto; /* Adjust height if necessary */
+  position: relative; /* Add this to create a stacking context */
+  z-index: 5; /* Base z-index for header */
 }
 
 .header h1 {
@@ -82,23 +84,7 @@ body {
   overflow: visible;
   padding: 0;
   box-shadow: none;
-}
-
-@media (max-width: 768px) {
-  /* Fix the plane to a containing element to prevent it affecting scroll */
-  .banner-container {
-    position: relative;
-    isolation: isolate;
-    height: 150px; /* Set explicit height for plane container */
-    overflow: hidden;
-  }
-  
-  /* More precise plane positioning */
-  .plane-flying-gif {
-    position: absolute;
-    top: 60px; /* Adjust to fit within banner area */
-    transform-origin: center center;
-  }
+  z-index: 10; /* Higher z-index than nav-bar */
 }
 
 .banner {
@@ -109,6 +95,8 @@ body {
   display: block; /* Treat the image as a block element */
   border-radius: 0; /* Remove rounded corners */
   box-shadow: none; /* Remove any shadow */
+  position: relative; /* Add positioning context */
+  z-index: 10; /* Ensure banner is above nav */
 }
 
 .banner:hover {
@@ -130,6 +118,8 @@ body {
   border: 2px solid #4e81c5;
   width: fit-content; /* Only take width needed by content */
   flex-wrap: wrap;
+  position: relative; /* Add positioning context */
+  z-index: 5; /* Lower z-index than banner */
 }
 
 .nav-link {
@@ -149,7 +139,63 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
 }
 
+/* Special media query for the problematic range */
+@media (max-width: 768px) and (min-width: 481px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .banner-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .banner {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .nav-bar {
+    z-index: 5;
+    width: 80%;
+    margin-top: 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Fix the plane to a containing element to prevent it affecting scroll */
+  .banner-container {
+    position: relative;
+    isolation: isolate;
+    height: auto; /* Changed from 150px to auto */
+    overflow: visible; /* Changed from hidden to visible */
+    z-index: 10;
+  }
+  
+  .banner {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* More precise plane positioning */
+  .plane-flying-gif {
+    position: absolute;
+    top: 60px; /* Adjust to fit within banner area */
+    transform-origin: center center;
+    z-index: 1; /* Ensure plane is behind content */
+  }
+  
   .nav-bar {
     flex-direction: row;
     border-radius: 3px;
@@ -157,7 +203,9 @@ body {
     width: 80%;
     font-size: 0.75rem; /* Very small text for mobile */
     padding: 0.3rem; /* Reduced overall padding */
-    margin-bottom: 0.0rem; 
+    margin-bottom: 0.0rem;
+    margin-top: 0.5rem;
+    z-index: 5;
   }
   
   .nav-link {
@@ -321,7 +369,7 @@ body {
   left: 0; /* Start at left edge */
   width: 400px;
   height: auto;
-  z-index: 10;
+  z-index: 1; /* Changed from 10 to 1 to ensure it stays behind content */
   animation: fly-across 10s linear infinite;
   will-change: transform; /* Performance optimization */
   pointer-events: none; /* Prevents interaction with plane */
@@ -362,7 +410,7 @@ body {
     top: 100px;
     width: 250px;
     will-change: transform;
-    z-index: 10;
+    z-index: 1; /* Changed from 10 to 1 */
     animation: fly-across-mobile 8s linear infinite;
   }
   
@@ -378,7 +426,10 @@ body {
   /* Ensure content doesn't shift with animation */
   .page {
     isolation: isolate; /* Create a new stacking context */
-    z-index: 1;
+    z-index: 2; /* Increased from 1 to 2 */
+    padding-left: 1rem;
+    padding-right: 1rem; /* Ensure equal padding on both sides */
+    box-sizing: border-box;
   }
 }
 
@@ -401,13 +452,6 @@ body {
   transition: all 0.3s ease;
 }
 @media (max-width: 768px) {
-  /* Make container padding consistent */
-  .page {
-    padding-left: 1rem;
-    padding-right: 1rem; /* Ensure equal padding on both sides */
-    box-sizing: border-box;
-  }
-  
   .music-toggle {
     top: 10px;
     right: 10px;
