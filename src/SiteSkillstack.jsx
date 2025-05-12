@@ -23,21 +23,27 @@ import gimpImg from './assets/site-skills/gimp.png';
 
 function SiteSkillstack() {
   const containerRef = useRef(null);
-  const [selectedTool, setSelectedTool] = useState(null); // Add state for the selected tool
+  const [selectedTool, setSelectedTool] = useState(null);
+  const [selectedSkill, setSelectedSkill] = useState(null); // New state for expanded skill
 
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && selectedTool !== null) {
-        setSelectedTool(null);
+      if (e.key === 'Escape') {
+        if (selectedTool !== null) {
+          setSelectedTool(null);
+        }
+        if (selectedSkill !== null) {
+          setSelectedSkill(null);
+        }
       }
     };
 
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, [selectedTool]);
+  }, [selectedTool, selectedSkill]);
 
-  // Simple handler to scroll to the clicked item
-  const handleSkillClick = (e) => {
+  // Function to center the clicked skill in the carousel
+  const handleSkillScroll = (e) => {
     const container = containerRef.current;
     const clickedItem = e.currentTarget;
     
@@ -57,6 +63,12 @@ function SiteSkillstack() {
         behavior: 'smooth'
       });
     }
+  };
+  
+  // Handle skill click to both scroll and expand
+  const handleSkillClick = (skill, e) => {
+    handleSkillScroll(e);
+    setSelectedSkill(skill);
   };
 
   // Define your skills - just one set, no duplicates needed
@@ -174,7 +186,7 @@ function SiteSkillstack() {
               <div 
                 key={index} 
                 className="skill-icon"
-                onClick={handleSkillClick}
+                onClick={(e) => handleSkillClick(skill, e)}
               >
                 <img src={skill.icon} alt={skill.name} />
               </div>
@@ -192,30 +204,57 @@ function SiteSkillstack() {
         <div className="tools-grid">
           {tools.map((tool, index) => (
             <div key={index} className="tool-card">
-            <h3>{tool.name}</h3>
-            <div 
-              className="tool-image"
-              onClick={() => setSelectedTool(tool)}
-            >
-              <img src={tool.image} alt={`Example of ${tool.name}`} />
-            </div>
+              <h3>{tool.name}</h3>
+              <div 
+                className="tool-image"
+                onClick={() => setSelectedTool(tool)}
+              >
+                <img src={tool.image} alt={`Example of ${tool.name}`} />
+              </div>
 
-            {/* Replace the simple paragraph with this function that detects URLs */}
-            <div className="tool-description">
-              {renderDescriptionWithLinks(tool.description)}
+              {/* Replace the simple paragraph with this function that detects URLs */}
+              <div className="tool-description">
+                {renderDescriptionWithLinks(tool.description)}
+              </div>
             </div>
-          </div>
           ))}
         </div>
       </section>
+
+      {/* Skills Expanded Overlay */}
+      {selectedSkill && (
+        <div 
+          className="skill-overlay active"
+          onClick={() => setSelectedSkill(null)}
+        >
+          <div 
+            className="skill-expanded"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={selectedSkill.icon} 
+              alt={selectedSkill.name}
+            />
+            <h3 className="skill-expanded-title">{selectedSkill.name}</h3>
+            <button 
+              className="skill-close-btn"
+              onClick={() => setSelectedSkill(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      
+      {/* Tools Expanded Overlay */}
       {selectedTool && (
         <div 
           className="image-modal-overlay"
-          onClick={() => setSelectedTool(null)} // Close on background click
+          onClick={() => setSelectedTool(null)} 
         >
           <div 
             className="image-modal-content"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking content
+            onClick={(e) => e.stopPropagation()} 
           >
             <img 
               src={selectedTool.image} 
