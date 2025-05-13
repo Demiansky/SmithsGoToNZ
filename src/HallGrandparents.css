@@ -91,3 +91,36 @@
     height: 250px;
   }
 }
+
+/* ===== 5. DISCLAIMER BOX ===== */
+.disclaimer-box {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-sm);
+  background-color: rgba(255, 252, 205, 0.9);
+  border: 2px dashed var(--primary-color);
+  border-radius: var(--border-radius);
+  text-align: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--box-shadow);
+}
+
+.disclaimer-box h3 {
+  color: #8b0000;
+  margin-top: 0;
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.2rem;
+}
+
+.disclaimer-box p {
+  margin: 0;
+  font-style: italic;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .disclaimer-box {
+    padding: var(--spacing-xs);
+  }
+}
