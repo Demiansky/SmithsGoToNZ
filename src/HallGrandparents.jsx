@@ -1,8 +1,8 @@
 import React from 'react';
 import './HallGrandparents.css';
-import popPop from './assets/bummedgrandpa.png';
-import grandma from './assets/bummedgrandma.png';
-import nana from './assets/bummednana.png';
+import popPop from './assets/bummed-grandpa.png';
+import grandma from './assets/bummed-grandma.png';
+import nana from './assets/bummed-nana.png';
 
 function HallGrandparents() {
   return (

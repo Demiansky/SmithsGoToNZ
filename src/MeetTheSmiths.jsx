@@ -1,9 +1,9 @@
 import './MeetTheSmiths.css'; // Import a CSS file specific to this page
-import danaProfileImage from './assets/danaprofile.png';
-import raniProfileImage from './assets/raniprofile.png';
-import mayaProfileImage from './assets/mayaprofile.png';
-import ellieProfileImage from './assets/ellieprofile.png';
-import honeyProfileImage from './assets/honeyprofile.png';
+import danaProfileImage from './assets/dana-profile.png';
+import raniProfileImage from './assets/rani-profile.png';
+import mayaProfileImage from './assets/maya-profile.png';
+import ellieProfileImage from './assets/ellie-profile.png';
+import honeyProfileImage from './assets/honey-profile.png';
 
 function MeetTheSmiths() {
   // Function to open PDF in new tab

@@ -9,10 +9,10 @@ import family from './assets/family.png';
 import robot from './assets/robot.png';
 import checklist from './assets/checklist.png';
 import everythingellie from './assets/everything-ellie.png';
-import siteskillstack from './assets/siteskillstack.png';
+import siteskillstack from './assets/site-skillstack.png';
 import grandparents from './assets/grandparents.png';
 import planeFlyingGif from './assets/plane-flying.gif';
-import BackgroundMusicComponent from './assets/BackgroundMusic.mp3';
+import BackgroundMusicComponent from './assets/background-music.mp3';
 
 // Import pages
 import MeetTheSmiths from './MeetTheSmiths';

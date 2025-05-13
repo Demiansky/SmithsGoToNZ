@@ -1,6 +1,6 @@
 import React from 'react';
 import './SplashScreen.css';
-import textBanner from './assets/SplashScreen.png'; // Your combined title+map image
+import textBanner from './assets/splash-screen.png'; // Your combined title+map image
 
 function SplashScreen({ onEnter }) {
     return (
