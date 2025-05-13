@@ -1,4 +1,4 @@
-
+/* ===== CSS VARIABLES ===== */
 :root {
   /* Color scheme */
   --primary-color: #4e81c5;
@@ -30,23 +30,25 @@ html, body {
   overflow-x: hidden;
   max-width: 100vw;
   position: relative;
+  width: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff; /* Light blue background */
-  background-image: url('./assets/background.png'); /* Replace with your image path */
-  background-size: cover; /* Ensure the image covers the entire background */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-attachment: fixed; /* Lock the background image in place */
+  background-color: #f0f8ff;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  padding-top: 50px; /* Space for fixed navbar - default for desktop */
 }
 
 .page {
@@ -54,222 +56,125 @@ body {
   max-width: 1200px;
   text-align: center;
   padding: 1rem;
-  position: relative; /* Create positioning context */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  position: relative;
+  overflow-x: hidden;
+  isolation: isolate;
+  z-index: 2;
+  box-sizing: border-box;
 }
 
-/* Header Section for The Smiths Move to New Zealand*/
+/* ===== 2. HEADER & NAVIGATION ===== */
 .header {
-  padding: 0; /* Remove padding */
-  border: none; /* Remove border */
-  background-color: transparent; /* Remove background color */
-  box-shadow: none; /* Remove shadow */
-  height: auto; /* Adjust height if necessary */
-  position: relative; /* Add this to create a stacking context */
-  z-index: 5; /* Base z-index for header */
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  height: auto;
+  position: relative;
+  z-index: 5;
+  margin-bottom: 10px;
 }
 
 .header h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #003366; 
+  color: var(--primary-dark);
   margin: 0;
 }
 
-.homepage-info-box {
-  background-color: rgba(212, 221, 238, 0.8); /* Light blue background with transparency */
-  border: 2px solid #4e81c5;
-  border-radius: 10px;
-  padding: 0.5rem;
-  margin: 1rem auto 2rem;
-  max-width: 80%;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  font-size: 1.1rem;
-  color: #0c0404;
-  line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-  .homepage-info-box {
-    padding: 1.25rem;
-    max-width: 90%;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .info-box {
-    padding: 1rem;
-    max-width: 95%;
-    font-size: 0.9rem;
-  }
-}
-
 .banner-container {
-  position: relative; /* Allows positioning of child elements */
+  position: relative;
   display: flex;
-  flex-direction: column; /* Stack the banner and nav bar vertically */
-  align-items: center; /* Center the content horizontally */
+  flex-direction: column;
+  align-items: center;
   background-color: transparent;
   border-radius: 0;
   overflow: visible;
   padding: 0;
   box-shadow: none;
-  z-index: 10; /* Higher z-index than nav-bar */
+  z-index: 10;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .banner {
-  width: 100%; /* Allow the banner to span the full width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image scales properly */
-  margin: 0; /* Remove any default margins */
-  display: block; /* Treat the image as a block element */
-  border-radius: 0; /* Remove rounded corners */
-  box-shadow: none; /* Remove any shadow */
-  position: relative; /* Add positioning context */
-  z-index: 10; /* Ensure banner is above nav */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .banner:hover {
-  transform: scale(1.05); /* Slightly enlarge the banner */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
-  filter: brightness(70%); /* Darken the banner */
+  transform: scale(1.05);
+  box-shadow: var(--box-shadow-hover);
+  filter: brightness(70%);
 }
 
+/* Fixed Navigation Bar - Redesigned for all screen sizes */
 .nav-bar {
-  display: inline-flex; /* Change from flex to inline-flex */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1rem;
-  background-color: rgb(230, 240, 255, 0.8);
-  padding: 0.5rem 1.5rem; /* Add more horizontal padding */
-  border-radius: 5px;
-  margin: 1rem auto; /* Keep auto margins for centering */
+  align-items: center;
+  background-color: rgba(230, 240, 255, 0.95);
+  padding: 8px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  border: 2px solid #4e81c5;
-  width: fit-content; /* Only take width needed by content */
-  flex-wrap: wrap;
-  position: relative; /* Add positioning context */
-  z-index: 5; /* Lower z-index than banner */
+  border-bottom: 2px solid var(--primary-color);
+  z-index: 1000;
+  box-sizing: border-box;
+  flex-wrap: nowrap; /* Default: no wrap for desktop */
 }
 
 .nav-link {
-  color: #003366; /* Dark text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 1rem; /* Set font size */
-  font-weight: bold; /* Make the text bold */
-  padding: 0.5rem 1rem; /* Add padding inside each link */
-  border-radius: 5px; /* Round the corners of each link */
-  background-color: rgb(230, 240, 255, 0.0); /* Light blue background */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: var(--border-radius-sm);
+  background-color: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.95rem;
 }
 
 .nav-link:hover {
-  transform: scale(1.05); /* Slightly enlarge the link */
-  filter: brightness(70%); /* Darken the link */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
+  transform: scale(1.05);
+  filter: brightness(70%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Special media query for the problematic range */
-@media (max-width: 768px) and (min-width: 481px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .banner-container {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .banner {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-  }
-  
-  .nav-bar {
-    z-index: 5;
-    width: 80%;
-    margin-top: 0.5rem;
-  }
+/* ===== 3. CONTENT SECTIONS ===== */
+.homepage-info-box {
+  background-color: rgba(212, 221, 238, 0.8);
+  border: var(--border-standard);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  margin: 1rem auto 2rem;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  /* Fix the plane to a containing element to prevent it affecting scroll */
-  .banner-container {
-    position: relative;
-    isolation: isolate;
-    height: auto; /* Changed from 150px to auto */
-    overflow: visible; /* Changed from hidden to visible */
-    z-index: 10;
-  }
-  
-  .banner {
-    position: relative;
-    z-index: 10;
-  }
-  
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* More precise plane positioning */
-  .plane-flying-gif {
-    position: absolute;
-    top: 60px; /* Adjust to fit within banner area */
-    transform-origin: center center;
-    z-index: 100; /* Ensure plane is behind content */
-  }
-  
-  .nav-bar {
-    flex-direction: row;
-    border-radius: 3px;
-    gap: 0.0rem;
-    width: 80%;
-    font-size: 0.75rem; /* Very small text for mobile */
-    padding: 0.3rem; /* Reduced overall padding */
-    margin-bottom: 0.0rem;
-    margin-top: 0.5rem;
-    z-index: 5;
-  }
-  
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    padding: 0.75rem 0;
-  }
-}
-
-@media (max-width: 550px) {
-  .nav-bar {
-    flex-direction: row;
-    border-radius: 1px;
-    gap: 0.0rem;
-    width: 70%;
-    padding: 0.0rem; 
-    margin-bottom: 0.0rem; 
-  }
-  
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0.75rem 0;
-  }
-}
-
-/* Image Grid Section */
+/* ===== 4. IMAGE GRID ===== */
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates 2 equal columns */
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin-top: 2rem;
   width: 100%;
@@ -277,101 +182,46 @@ body {
 
 .image-card {
   flex: 1;
-  border-radius: 10px;
-  border: 2px solid #4e81c5; /* Light blue border */
-  background-color: rgb(212, 221, 238);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius);
+  border: var(--border-standard);
+  background-color: var(--secondary-bg);
+  box-shadow: var(--box-shadow);
   padding: 1rem;
-  position: relative; /* Make the card a positioning context */
-  overflow: hidden; /* Ensure content stays within the card */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
+  transform: scale(1.05);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .image-card img {
   width: 100%;
-  border-radius: 10px;
-  transition: filter 0.3s ease; /* Smooth darkening effect */
+  border-radius: var(--border-radius);
+  transition: filter 0.3s ease;
 }
 
 .image-card:hover img {
-  filter: brightness(70%); /* Darken the image */
+  filter: brightness(70%);
 }
 
 .image-card p {
-  position: absolute; /* Position the text absolutely */
-  top: 10px; /* Place it near the top */
-  left: 50%; /* Center horizontally */
-  width: 75%; /* Set the width to 75% of the card */
-  transform: translateX(-50%) scale(1); /* Default scale */
-  background-color: rgba(175, 183, 230, 0.4); /* Add a semi-transparent background */
-  padding: 0.5rem 1rem; /* Add some padding around the text */
-  border-radius: 5px; /* Round the edges of the text box */
-  font-size: 3rem; /* Adjust font size */
-  font-weight: bold; /* Make the text bold */
-  color: #0c0404; /* Match the dark blue color */
-  text-align: center; /* Center-align the text */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.image-card p {
-  position: absolute; 
+  position: absolute;
   top: 10px;
   left: 50%;
   width: 75%;
   transform: translateX(-50%) scale(1);
   background-color: rgba(175, 183, 230, 0.4);
   padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-size: 2rem; /* Reduced from 3rem */
+  border-radius: var(--border-radius-sm);
+  font-size: 2rem;
   font-weight: bold;
-  color: #0c0404;
+  color: var(--text-color);
   text-align: center;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
-/* Tablet Styles */
-@media (max-width: 768px) {
-  .image-card p {
-    font-size: 1.2rem; /* Smaller on tablets */
-    padding: 0.3rem 0.5rem; /* Even smaller padding */
-    width: 70%;
-  }
-  
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
-    grid-gap: 1rem; /* Reduced gap */
-  }
-  
-  .image-card {
-    padding: 0.5rem; /* Reduced padding */
-  }
-}
-
-/* Mobile Styles */
-@media (max-width: 480px) {
-  .image-card p {
-    font-size: 1.5rem !important; /* Force override with !important */
-    top: 5px;
-    width: 90%; /* Make text box wider on mobile */
-    padding: 0.5rem;
-    background-color: rgba(175, 183, 230, 0.7); /* More opaque background for better readability */
-  }
-  
-  .image-grid {
-    grid-template-columns: 1fr; /* Single column on small screens */
-  }
-  
-  .image-card {
-    max-width: 85%;
-  }
-}
-
-
 
 .image-card a {
   text-decoration: none;
@@ -379,71 +229,128 @@ body {
 }
 
 .image-card:hover p {
-  transform: translateX(-50%) scale(1.1); /* Slightly enlarge the text */
-  background-color: rgba(175, 183, 230, 0.6); /* Make the background slightly less transparent */
+  transform: translateX(-50%) scale(1.1);
+  background-color: rgba(175, 183, 230, 0.6);
 }
 
-.plane-sprite {
-  position: absolute;
-  top: 10%; /* Start in the middle of the banner */
-  left: 0px; /* Start off-screen to the left */
-  width: 200px; /* Width of a single frame */
-  height: 200px; /* Height of a single frame */
-  background-image: url('./assets/planesprite-sheet.png'); /* Sprite sheet image */
-  background-size: 400%; /* Adjust based on the number of frames */
-  background-repeat: no-repeat;
-  transform: translateY(-50%); /* Center vertically */
-  animation: fly-across 5s linear infinite, sprite-animation 1s steps(4) infinite; /* Combine animations */
-}
-
+/* ===== 5. ANIMATIONS & DECORATIVE ELEMENTS ===== */
 .plane-flying-gif {
   position: absolute;
-  top: 100px; /* Start at a fixed position */
-  left: 0; /* Start at left edge */
+  top: 100px;
+  left: 0;
   width: 400px;
   height: auto;
-  z-index: 100; /* Changed from 10 to 1 to ensure it stays behind content */
+  z-index: 100;
   animation: fly-across 10s linear infinite;
-  will-change: transform; /* Performance optimization */
-  pointer-events: none; /* Prevents interaction with plane */
+  will-change: transform;
+  pointer-events: none;
 }
 
 @keyframes fly-across {
   0% {
-    transform: translateX(-400px); /* Start completely off-screen (plane width) */
+    transform: translateX(-400px);
   }
   100% {
-    transform: translateX(calc(100vw + 400px)); /* Go completely off the other side */
+    transform: translateX(calc(100vw + 400px));
   }
 }
 
+/* ===== 6. UTILITY COMPONENTS ===== */
+.music-toggle-btn {
+  position: fixed;
+  top: 8px;
+  right: 10px;
+  z-index: 1001;
+  background-color: rgba(175, 183, 230, 0.7);
+  color: #000000;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== 7. RESPONSIVE STYLES ===== */
+/* Large Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .image-grid {
+    grid-gap: 1.5rem;
+  }
+  
+  .image-card p {
+    font-size: 1.7rem;
+  }
+}
+
+/* Small Tablets and below (up to 768px) - TWO ROW NAVIGATION */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
-    background-size: cover;
-    background-position: top center; /* Fix position to top */
-    height: auto; /* Allow content to determine height */
+    background-position: top center;
+    padding-top: 90px; /* Increased padding for two-row navbar */
   }
   
-  /* Add this to prevent content shifting */
-  html, body {
-    overflow-x: hidden;
-    position: relative;
+  .nav-bar {
+    flex-wrap: wrap; /* Enable wrapping for two rows */
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    box-sizing: border-box;
   }
   
-  /* Prevent overscroll bouncing effect */
-  html {
-    overscroll-behavior: none;
+  .nav-link {
+    flex: 0 0 30%; /* Force exactly 3 items per row */
+    padding: 6px 5px;
+    margin: 3px 1%;
+    font-size: 0.9rem;
+    text-align: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0; /* Allow text to shrink if needed */
   }
   
-  /* Optimize plane animation for mobile */
+  .banner-container {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .homepage-info-box {
+    padding: 1.25rem;
+    max-width: 90%;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  
+  .image-card p {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+    width: 70%;
+  }
+  
+  .image-card {
+    padding: 0.5rem;
+  }
+  
   .plane-flying-gif {
-    position: absolute;
-    top: 100px;
     width: 250px;
-    will-change: transform;
-    z-index: 100; /* Changed from 10 to 1 */
     animation: fly-across-mobile 8s linear infinite;
   }
   
@@ -456,44 +363,76 @@ body {
     }
   }
   
-  /* Ensure content doesn't shift with animation */
-  .page {
-    isolation: isolate; /* Create a new stacking context */
-    z-index: 2; /* Increased from 1 to 2 */
-    padding-left: 1rem;
-    padding-right: 1rem; /* Ensure equal padding on both sides */
-    box-sizing: border-box;
-  }
-}
-
-/* Replace the existing .music-toggle styles with these */
-.music-toggle-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 1000;
-  background-color: rgba(175, 183, 230, 0.7);
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-@media (max-width: 768px) {
-  .music-toggle {
-    top: 10px;
+  .music-toggle-btn {
+    top: 75px; /* Just below the nav bar */
     right: 10px;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
+    padding: 4px 8px;
+    font-size: 13px;
+    background-color: rgba(175, 183, 230, 0.85);
   }
 }
 
-.music-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+/* Mobile Phones (up to 550px) */
+@media (max-width: 550px) {
+  body {
+    padding-top: 85px; /* Slightly adjusted for smaller screens */
+  }
+  
+  .nav-link {
+    padding: 5px 8px;
+    margin: 2px 3px;
+    font-size: 0.85rem;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .homepage-info-box {
+    max-width: 95%;
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+  .music-toggle-btn {
+    top: 62px; /* Adjust for smaller screens */
+    right: 8px;
+  }
+}
+/* Small Mobile Phones (up to 400px) */
+@media (max-width: 400px) {
+  body {
+    padding-top: 80px;
+  }
+  
+  .nav-link {
+    padding: 4px 6px;
+    margin: 2px;
+    font-size: 0.8rem;
+    width: calc(33.33% - 6px);
+  }
+  
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-card {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .image-card p {
+    font-size: 1.5rem !important;
+    top: 5px;
+    width: 90%;
+    padding: 0.5rem;
+    background-color: rgba(175, 183, 230, 0.7);
+  }
+  
+  .music-toggle-btn {
+    top: 58px; /* Further adjust for very small screens */
+    right: 5px;
+    padding: 3px 6px;
+    font-size: 11px;
+  }
 }
