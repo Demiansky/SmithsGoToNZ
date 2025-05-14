@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 
 import './index.css';
 import SplashScreen from './SplashScreen';
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       {/* Audio element for background music */}
       <audio 
         ref={audioRef}
@@ -94,7 +96,14 @@ function App() {
                 <Link to="/meet-the-smiths" className="nav-link">Meet the Smiths</Link>
                 <Link to="/talk-to-smithbot" className="nav-link">Talk to Smithbot</Link>
                 <Link to="/to-do" className="nav-link">To Do</Link>
-                <Link to="/EverythingEllie" className="nav-link">Ellie Blog</Link>
+                <a 
+                  href="https://www.youtube.com/channel/UCSdwgY0oczjFbdwgyQ_2qzQ" 
+                  className="nav-link" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Ellie Blog
+                </a>
                 <Link to="/SiteSkillstack" className="nav-link">Site Skills</Link>
                 <Link to="/HallGrandparents" className="nav-link">Sad Grandparents</Link>
               </nav>
@@ -131,11 +140,15 @@ function App() {
                       </div>
 
                       {/* Second Row */}
-                      <div className="image-card">
-                        <Link to="/EverythingEllie">
+                     <div className="image-card">
+                        <a 
+                          href="https://www.youtube.com/channel/UCSdwgY0oczjFbdwgyQ_2qzQ" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
                           <img src={everythingellie} alt="Ellie's travel blog" />
                           <p>Ellie's Travel Blog</p>
-                        </Link>
+                        </a>
                       </div>
                       <div className="image-card">
                         <Link to="/SiteSkillstack">
