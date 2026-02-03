@@ -102,7 +102,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Ellie Blog
+                  Ellie Channel
                 </a>
                 <Link to="/SiteSkillstack" className="nav-link">Site Skills</Link>
                 <Link to="/HallGrandparents" className="nav-link">Sad Grandparents</Link>
