@@ -3,6 +3,7 @@ import danaProfileImage from './assets/dana-profile.png';
 import raniProfileImage from './assets/rani-profile.png';
 import mayaProfileImage from './assets/maya-profile.png';
 import ellieProfileImage from './assets/ellie-profile.png';
+import roseProfileImage from './assets/rose-profile.png';
 import honeyProfileImage from './assets/honey-profile.png';
 
 function MeetTheSmiths() {
@@ -32,7 +33,7 @@ function MeetTheSmiths() {
               he built complex deep simulation software based on principles of geology, ecology, 
               climate science and plate tectonics.  He wrote the core simulation code, 
               managed team members, built communities, and built a brand.  As a senior software 
-              engineer in the corporate world, he architected, coded, and deployed modern software 
+              engineer in the corporate world, he built architectural solutions, coded, and deployed modern software 
               and data pipelines.  Both roles he found deeply satisfying and finds immense joy in learning!
             </p>
             <p> 
@@ -90,10 +91,10 @@ function MeetTheSmiths() {
           </div>
           <div className="text-box">
             <p>
-            Ellie Smith is an 11 year old, high-octane burst of joy— smart, talkative, and is filled with a genuine excitement about the world.  She’s imaginative, theatrical, and intensely curious, often leaving adults breathless trying to keep up with her rapid-fire enthusiasm. She's not just playful—she's also thoughtful, mischievous, and fiercely proud of her academic success (straight A student!) Her emotions run deep; she’s sentimental about leaving her home but able to channel that emotion into excitement for new adventures.
+            Ellie Smith is an 12 year old, high-octane burst of joy— smart, talkative, and is filled with a genuine excitement about the world.  She’s imaginative, theatrical, and intensely curious, often leaving adults breathless trying to keep up with her rapid-fire enthusiasm. She's not just playful—she's also thoughtful, mischievous, and fiercely proud of her academic success (straight A student!) Her emotions run deep; she’s sentimental about leaving her home but able to channel that emotion into excitement for new adventures.  She is the fire behind the migration, asking every day whether there is progress on the move.
             </p>
             <p>
-            Her favorite games are Spore and Breath of the Wild, where she can explore a wide open wilderness (like New Zealand’s??) and express her creativity.  She loves the performing arts, but also has a fascination with technology, including artificial intelligence and programming.  
+            Her favorite games are Spore and Breath of the Wild, where she can explore a wide open wilderness (like New Zealand’s??) and express her creativity.  She loves the performing arts and illustration, but also has a fascination with technology, including artificial intelligence and programming.  
             </p>
             <p>
             Ellie is a cultural explorer.  Not only does she love trying new foods, she loves learning about the geography, geopolitics, and history of distant lands.  That newest distant land of focus and curiosity, of course, is New Zealand!
@@ -111,7 +112,7 @@ function MeetTheSmiths() {
           </div>
           <div className="text-box">
             <p>
-            Maya Smith is a 9 year old girl and the gentle soul of the Smith family.  She’s sweet, observant, and quietly brilliant.  She’s a bookworm and loves the fantastical realms of science fiction and fantasy, but also has a deep fascination with practical subjects of astronomy, geology, and engineering.  She feels things deeply and is very attuned to beauty, wonder, and the unknown—whether in nature, in books, or in the night sky.
+            Maya Smith is a 10 year old girl and the gentle soul of the Smith family.  She’s sweet, observant, and quietly brilliant.  She’s a bookworm and loves the fantastical realms of science fiction and fantasy, but also has a deep fascination with practical subjects of astronomy, geology, and engineering.  She feels things deeply and is very attuned to beauty, wonder, and the unknown—whether in nature, in books, or in the night sky.
             </p>
             <p>
             Maya’s free time reflects her interests in both the creative and logical.  In addition to science fiction and fantasy books, she loves building Crunch Labs engineering build boxes in her free time and loves puzzle PC games like Portal and Portal 2.  She also has an interest in ancient history, especially antiquities around the time of the Punic Wars (thank you History Oversimplified!) 
@@ -123,12 +124,33 @@ function MeetTheSmiths() {
         </div>
       </div>
 
+      {/* Rose's profile */}
+      <div className="profile-container">
+        <img src={roseProfileImage} alt="Rose Smith" className="profile-image" />
+        <div className="profile-details">
+          <div className="sub-header-box">
+            <h2>Rose Smith: Maybe Kiwi Baby and Potato of Potential</h2>
+          </div>
+          <div className="text-box">
+            <p>
+            At one month old, Rose doesn't do much yet.  She eats, she cries, she sleeps, you get the rest.  She's basically a potato.  But tomorrow?  Still a potato, because a day is not much time.  And what is a potato?  A root vegetable.  Wait, wait, stop, come back, this is going somewhere, and there's a cat bio after this one!  Good, so, potato biology is very interesting.  A single potato is full of potential, ready to flourish and grow into a beautiful plant... BUT, for a potato to flourish, it needs the right soil.  Here in the clay rich soils of North Carolina, potatoes do poorly.  But in New Zealand's South Island loess soils and North Island volcanic soils?  You guessed it!  Potato Paradise!  Go ahead, ask ChatGPT!
+            </p>
+            <p>
+            Anyway, I know I've tortured this analogy pretty badly already, but its our sincere wish as the Smiths to plant Rose, at this nascent little potato moment in her life, in soil where our family ethics of compassion, pragmatism, whimsy, and knowledge can thrive.  That place is New Zealand!  But in America?  We're worried she'll just get turned into fast food French Fries.
+            </p>
+            <p>
+            So if you're a Kiwi with some savvy, we'd love your help!  And yes, I'm pulling the cute baby card.  Do it for the baby.  Don't let our little potato get turned into French Fries!
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Honey's profile */}
       <div className="profile-container">
         <img src={honeyProfileImage} alt="Honey Smith" className="profile-image" />
         <div className="profile-details">
           <div className="sub-header-box">
-            <h2>Honey Smith: Nanny Cat, Assertive Snuggler, Derp, Acrobat</h2>
+            <h2>Honey Smith: Nanny Cat, Assertive Snuggler, Derp, Weasel</h2>
           </div>
           <div className="text-box">
             <p>

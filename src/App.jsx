@@ -147,7 +147,7 @@ function App() {
                           rel="noopener noreferrer"
                         >
                           <img src={everythingellie} alt="Ellie's travel blog" />
-                          <p>Ellie's Travel Blog</p>
+                          <p>Ellie's Youtube Channel</p>
                         </a>
                       </div>
                       <div className="image-card">
