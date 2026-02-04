@@ -114,7 +114,7 @@ function SiteSkillstack() {
     {
       name: 'Audacity',
       image: audacityImg,
-      description: "Audacity is a free software used to record or edit audio. I used it to capture, edit, and modify a Lofi version of Green Day's hit single, 'American Idiot' to use as background music for my website."
+      description: "Audacity is a free software used to record or edit audio. I used it to edit and modify a Lofi version of Green Day's hit single, 'American Idiot', as well use it to voice act my Presidential Endorsement and apply AI filters."
     },
     {
       name: 'GIMP',
@@ -176,7 +176,7 @@ function SiteSkillstack() {
     <div className="skillstack-container">
       <h1 className="skillstack-title">Site Skills</h1>
       <div className="site-skills-text-box">
-        <p>Wonder what skills I used to build this website?  Take a peak down below!  Everything you see here was custom built by me, Dana Smith.  Design, architecture, artwork, graphic design, frontend, backend, programming, copy, and cheesy jokes!  Down below are the various skills on display, programming languages, and tools used!</p>
+        <p>Wonder what skills I used to build this website?  Take a peak down below!  Everything you see here was custom built by me, Dana Smith.  Design, architecture, artwork, graphic design, frontend, backend, programming, copy, cheesy jokes, and even voice acting!  Down below are the various skills on display, programming languages, and tools used!</p>
       </div>
       <section className="skills-section">
         {/* Skills carousel section */}
