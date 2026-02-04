@@ -33,7 +33,7 @@ function TrumpEndorsement() {
       />
       
       <div className="header-box">
-        <h1>Very, Very Real Presidential Endorsement</h1>
+        <h1>Very Real Presidential Endorsement</h1>
       </div>
       
       <div className="endorsement-content">

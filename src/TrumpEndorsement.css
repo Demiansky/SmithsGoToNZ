@@ -48,14 +48,24 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .trump-endorsement {
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .trump-endorsement .header-box {
+    max-width: 90%;
   }
   
   .trump-endorsement .header-box h1 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
   
   .endorsement-content {
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .trump-image {
+    max-width: calc(100% - 1rem);
+    border: 4px solid #c5b3e6;
+    padding: 0.5rem;
   }
 }

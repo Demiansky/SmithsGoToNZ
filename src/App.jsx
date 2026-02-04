@@ -109,7 +109,7 @@ function App() {
                 </a>
                 <Link to="/SiteSkillstack" className="nav-link">Site Skills</Link>
                 <Link to="/HallGrandparents" className="nav-link">Sad Grandparents</Link>
-                <Link to="/TrumpEndorsement" className="nav-link">Presidential Endorsement</Link>
+                <Link to="/TrumpEndorsement" className="nav-link">Endorsement</Link>
               </nav>
             </header>
 
