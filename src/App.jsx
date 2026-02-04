@@ -4,7 +4,7 @@ import ScrollToTop from './ScrollToTop';
 
 import './index.css';
 import SplashScreen from './SplashScreen';
-// Import images
+// Import images and audio
 import plane from './assets/smith-banner.png';
 import family from './assets/family.png';
 import robot from './assets/robot.png';
@@ -14,6 +14,8 @@ import siteskillstack from './assets/site-skillstack.png';
 import grandparents from './assets/grandparents.png';
 import planeFlyingGif from './assets/plane-flying.gif';
 import BackgroundMusicComponent from './assets/background-music.mp3';
+import trump from './assets/trump.png';
+import endorsement from './assets/TrumpEndorsement.mp3';
 
 // Import pages
 import MeetTheSmiths from './MeetTheSmiths';
@@ -22,6 +24,7 @@ import ToDo from './ToDo';
 import HallGrandparents from './HallGrandparents';
 import EverythingEllie from './EverythingEllie';
 import SiteSkillstack from './SiteSkillstack';
+import TrumpEndorsement from './TrumpEndorsement';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -106,6 +109,7 @@ function App() {
                 </a>
                 <Link to="/SiteSkillstack" className="nav-link">Site Skills</Link>
                 <Link to="/HallGrandparents" className="nav-link">Sad Grandparents</Link>
+                <Link to="/TrumpEndorsement" className="nav-link">Presidential Endorsement</Link>
               </nav>
             </header>
 
@@ -162,6 +166,14 @@ function App() {
                           <p>Hall of Sad Grandparents</p>
                         </Link>
                       </div>
+
+                       {/* Third Row */}
+                     <div className="image-card">
+                        <Link to="/TrumpEndorsement">
+                          <img src={trump} alt="Presidential Endorsement" />
+                          <p>U.S. Presidential Endorsement</p>
+                        </Link>
+                      </div>
                     </section>
                   </>
                 }
@@ -172,6 +184,7 @@ function App() {
               <Route path="/HallGrandparents" element={<HallGrandparents />} />
               <Route path="/EverythingEllie" element={<EverythingEllie />} />
               <Route path="/SiteSkillstack" element={<SiteSkillstack />} />
+              <Route path="/TrumpEndorsement" element={<TrumpEndorsement />} />
             </Routes>
           </div>
         </>

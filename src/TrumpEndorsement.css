@@ -1,0 +1,61 @@
+.trump-endorsement {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.trump-endorsement .header-box {
+  background-color: rgba(212, 221, 238, 0.9);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 1rem 2rem;
+  margin: 0 auto 1rem;
+  max-width: 80%;
+  box-shadow: var(--box-shadow);
+}
+
+.trump-endorsement .header-box h1 {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: 2.5rem;
+}
+
+.endorsement-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.trump-image {
+  max-width: calc(100% - 2rem);
+  height: auto;
+  border: 8px solid #c5b3e6;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  background-color: #e8e3f5;
+  box-sizing: border-box;
+}
+
+.trump-image:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .trump-endorsement {
+    padding: 1rem;
+  }
+  
+  .trump-endorsement .header-box h1 {
+    font-size: 1.8rem;
+  }
+  
+  .endorsement-content {
+    padding: 1rem;
+  }
+}
