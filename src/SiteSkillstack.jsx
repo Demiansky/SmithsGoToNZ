@@ -176,7 +176,7 @@ function SiteSkillstack() {
     <div className="skillstack-container">
       <h1 className="skillstack-title">Site Skills</h1>
       <div className="site-skills-text-box">
-        <p>Wonder what skills I used to build this website?  Take a peak down below!  Everything you see here was custom built by me, Dana Smith.  Design, architecture, artwork, graphic design, frontend, backend, programming, copy, cheesy jokes, and even voice acting!  Down below are the various skills on display, programming languages, and tools used!</p>
+        <p>Wonder what skills I used to build this website?  Take a peek down below!  Everything you see here was custom built by me, Dana Smith.  Design, architecture, artwork, graphic design, frontend, backend, programming, copy, cheesy jokes, and even voice acting!  Down below are the various skills on display, programming languages, and tools used!</p>
       </div>
       <section className="skills-section">
         {/* Skills carousel section */}
